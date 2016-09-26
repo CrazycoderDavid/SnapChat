@@ -16,12 +16,15 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var descField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
+    var uuid = NSUUID().uuidString
+    
     var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        nextButton.isEnabled = false
         
         
         
@@ -33,6 +36,8 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         imageView.image = image
         imageView.backgroundColor = UIColor.clear
+        
+        nextButton.isEnabled = true
         dismiss(animated: true, completion: nil)
     }
     
@@ -40,7 +45,7 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func cameraTapped(_ sender: AnyObject) {
         
-        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
         
@@ -54,7 +59,7 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
         
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid).jpg").put(imageData, metadata: nil) { (metadata, error) in
             print("UploadAttemped")
             if error != nil {
                 print("We have and issuse \(error)")
@@ -62,7 +67,7 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 
                 
                 print(metadata?.downloadURL())
-                self.performSegue(withIdentifier: "selectUser", sender: nil)
+                self.performSegue(withIdentifier: "selectUser", sender: metadata!.downloadURL()!.absoluteString)
             }
             
             
@@ -72,6 +77,12 @@ class PicturesVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    let nextVC = segue.destination as! SelectUserVC
+        nextVC.imageUrl = sender as! String
+        nextVC.descrip = descField.text!
+        nextVC.uuid = uuid
     }
+    
 }
 

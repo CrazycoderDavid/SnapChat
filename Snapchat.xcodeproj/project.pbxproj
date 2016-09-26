@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57D590991C63CC7CD4F855E6 /* Pods_Snapchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CF3457BE354AEC0DFC38B8 /* Pods_Snapchat.framework */; };
+		CD8387291D95C7FC002492A3 /* Snaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8387281D95C7FC002492A3 /* Snaps.swift */; };
+		CD83872B1D95D3F8002492A3 /* ViewSnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83872A1D95D3F8002492A3 /* ViewSnapVC.swift */; };
 		CDDC663F1D933ACE001B7293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC663E1D933ACE001B7293 /* AppDelegate.swift */; };
 		CDDC66411D933ACE001B7293 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC66401D933ACE001B7293 /* SignInViewController.swift */; };
 		CDDC66441D933ACE001B7293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDDC66421D933ACE001B7293 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		60F549FA26631A33C55CDDB3 /* Pods-Snapchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.release.xcconfig"; sourceTree = "<group>"; };
 		846C7AB737FCA87A5BE6894F /* Pods-Snapchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snapchat/Pods-Snapchat.debug.xcconfig"; sourceTree = "<group>"; };
+		CD8387281D95C7FC002492A3 /* Snaps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Snaps.swift; path = ../Snaps.swift; sourceTree = "<group>"; };
+		CD83872A1D95D3F8002492A3 /* ViewSnapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSnapVC.swift; sourceTree = "<group>"; };
 		CDDC663B1D933ACE001B7293 /* Snapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDDC663E1D933ACE001B7293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Snapchat/AppDelegate.swift; sourceTree = "<group>"; };
 		CDDC66401D933ACE001B7293 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +101,6 @@
 				CDDC66561D939FA3001B7293 /* View */,
 				CDDC66571D939FA9001B7293 /* Controller */,
 				CDDC66481D933ACE001B7293 /* Assets.xcassets */,
-				CDDC66421D933ACE001B7293 /* Main.storyboard */,
 				CDDC663C1D933ACE001B7293 /* Products */,
 			);
 			path = Snapchat;
@@ -106,6 +109,7 @@
 		CDDC66551D939F95001B7293 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD8387281D95C7FC002492A3 /* Snaps.swift */,
 				CDDC66601D9482C8001B7293 /* user.swift */,
 			);
 			name = Model;
@@ -114,6 +118,7 @@
 		CDDC66561D939FA3001B7293 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CDDC66421D933ACE001B7293 /* Main.storyboard */,
 				CDDC664A1D933ACE001B7293 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -126,6 +131,7 @@
 				CDDC665A1D93A68F001B7293 /* SnapsVC.swift */,
 				CDDC665C1D93AB66001B7293 /* PicturesVC.swift */,
 				CDDC665E1D947B31001B7293 /* SelectUserVC.swift */,
+				CD83872A1D95D3F8002492A3 /* ViewSnapVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,7 +279,9 @@
 			files = (
 				CDDC66411D933ACE001B7293 /* SignInViewController.swift in Sources */,
 				CDDC665F1D947B31001B7293 /* SelectUserVC.swift in Sources */,
+				CD83872B1D95D3F8002492A3 /* ViewSnapVC.swift in Sources */,
 				CDDC665D1D93AB66001B7293 /* PicturesVC.swift in Sources */,
+				CD8387291D95C7FC002492A3 /* Snaps.swift in Sources */,
 				CDDC66471D933ACE001B7293 /* Snapchat.xcdatamodeld in Sources */,
 				CDDC66611D9482C8001B7293 /* user.swift in Sources */,
 				CDDC665B1D93A68F001B7293 /* SnapsVC.swift in Sources */,
